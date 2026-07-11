@@ -6,7 +6,7 @@ h = 0.01;
 f[{x_, y_, z_}] := {x + h*\[Sigma] (y - x), y + h (x (\[Rho] - z) - y), z + h (x*y - \[Beta]*z)}
 pts = NestList[f, {1, 1, 1}, 5000];
 Show[{ListPointPlot3D[pts], Graphics3D[{Opacity[0.35], Red, Line[pts]}]}, ViewPoint -> Above]
-Out[60]=  
+
 (*V2*)
 \[Sigma] = 10;
 \[Rho] = 28;
@@ -15,7 +15,7 @@ h = 0.01;
 f[{x_, y_, z_}] := {(x + h*\[Sigma]*y)/(1 + h*\[Sigma]),y + h*((x + h*\[Sigma]*y)/(1 + h*\[Sigma]) (\[Rho] - z) - y),z + h*((x + h*\[Sigma]*y)/(1 + h*\[Sigma]) y - \[Beta]*z)}
 pts = NestList[f, {1, 1, 1}, 5000];
 Show[{ListPointPlot3D[pts], Graphics3D[{Opacity[0.35], Red, Line[pts]}]}, ViewPoint -> Above]
-Out[28]=  
+
 (*V3*)
 \[Sigma] = 10;
 \[Rho] = 28;
@@ -24,7 +24,7 @@ h = 0.01;
 f[{x_, y_, z_}] := {x +  h*\[Sigma] ((y + h*x (\[Rho] - z))/(1 + h) - x), ( y + h*x (\[Rho] - z))/(1 + h), z + h (x*(y + h*x (\[Rho] - z))/(1 + h) - \[Beta]*z)}
 pts = NestList[f, {1, 1, 1}, 5000];
 Show[{ListPointPlot3D[pts],Graphics3D[{Opacity[0.35], Red, Line[pts]}]}, ViewPoint -> Above]
-Out[35]=  
+
 (*V4*)
 \[Sigma] = 10;
 \[Rho] = 28;
@@ -33,7 +33,7 @@ h = 0.01;
 f[{x_, y_, z_}] := {x + h*\[Sigma] (y - x), y + h (x (\[Rho] -( z + h x*y )/(1+ \[Beta]*h)) - y), ( z + h x*y )/(1+ \[Beta]*h)}
 pts = NestList[f, {1, 1, 1}, 5000];
 Show[{ListPointPlot3D[pts], Graphics3D[{Opacity[0.35], Red, Line[pts]}]}, ViewPoint -> Above]
-Out[7]=  
+ 
 (*V2&3*)
 \[Sigma] = 10;
 \[Rho] = 28;
@@ -44,7 +44,7 @@ f[{x_, y_, z_}] := {(x*(1+h)+h*\[Sigma] *y)/((1+h*\[Sigma] )(1+h)-h^2*(\[Sigma] 
 z + h *((x*(1+h)+h*\[Sigma] *y)/((1+h*\[Sigma] )*(1+h)-h^2*(\[Sigma] *(\[Rho]-z)))*(y*(1+h*\[Sigma])+h*x *(\[Rho]-z))/((1+h*\[Sigma] )*(1+h)-h^2(\[Sigma] *(\[Rho]-z)))- \[Beta]*z)}
 pts = NestList[f, {1, 1, 1}, 5000];
 Show[{ListPointPlot3D[pts], Graphics3D[{Opacity[0.35], Red, Line[pts]}]}, ViewPoint -> Above]
-Out[15]=  
+ 
 (*V2&4*)
 \[Sigma] = 10;
 \[Rho] = 28;
@@ -55,7 +55,7 @@ y + h ((x + h*\[Sigma]*y)/(1 + h*\[Sigma]) (\[Rho] - ( z + h x*y )/(1+ \[Beta]*h
 ( z + h x*y )/(1+ \[Beta]*h)}
 pts = NestList[f, {1, 1, 1}, 5000];
 Show[{ListPointPlot3D[pts], Graphics3D[{Opacity[0.35], Red, Line[pts]}]}, ViewPoint -> Above]
-Out[22]=  
+
 (*V3&4*)
 \[Sigma] = 10;
 \[Rho] = 28;
@@ -67,7 +67,7 @@ f[{x_, y_, z_}] :=
 -(z+h*(z+x*(y+h*\[Rho]*x)))/((1+h)*(1+h*\[Beta])+h*x*(1+h*x))}
 pts = NestList[f, {1, 1, 1}, 5000];
 Show[{ListPointPlot3D[pts], Graphics3D[{Opacity[0.35], Red, Line[pts]}]}, ViewPoint -> Above]
-Out[25]=  
+
 (*V5*)
 \[Sigma] = 10;
 \[Rho] = 28;
@@ -78,7 +78,7 @@ y + h ((x + h*\[Sigma]*y)/(1 + h*\[Sigma])* (\[Rho] - z) - y),
 z + h ((x + h*\[Sigma]*y)/(1 + h*\[Sigma])* ( y + h*x (\[Rho] - z))/(1 + h) - \[Beta]*z)}
 pts = NestList[f, {1, 1, 1}, 5000];
 Show[{ListPointPlot3D[pts], Graphics3D[{Opacity[0.35], Red, Line[pts]}]}, ViewPoint -> Above]
-Out[128]=  
+ 
 (*V6*)
 \[Sigma] = 10;
 \[Rho] = 28;
@@ -89,7 +89,7 @@ y + h ((x + h*\[Sigma]*y)/(1 + h*\[Sigma]) (\[Rho] -  ( z + h x*y )/(1+ \[Beta]*
 z + h ((x + h*\[Sigma]*y)/(1 + h*\[Sigma])*y - \[Beta]*z)}
 pts = NestList[f, {1, 1, 1}, 5000];
 Show[{ListPointPlot3D[pts], Graphics3D[{Opacity[0.35], Red, Line[pts]}]}, ViewPoint -> Above]
-Out[135]=  
+ 
 (*V7*)
 \[Sigma] = 10;
 \[Rho] = 28;
@@ -101,7 +101,7 @@ y + h*(x*(\[Rho] - z) - y),
 z + h*((x + h*\[Sigma]*((y + h*(x*(\[Rho] - z) - y)) - x))*(y + h*(x*(\[Rho] - z) - y)) - \[Beta]*z) }
 pts = NestList[f, {1, 1, 1}, 5000]; 
 Show[{ListPointPlot3D[pts], Graphics3D[{Opacity[0.35], Red, Line[pts]}]}, ViewPoint -> Above]
-Out[142]=  
+
 (*V8*)
 \[Sigma] = 10;
 \[Rho] = 28;
@@ -113,7 +113,7 @@ f[{x_, y_, z_}] :=
   z + h*(x*(y + h*(x*(\[Rho] - z) - y)) - \[Beta]*z)}
 pts = NestList[f, {1, 1, 1}, 5000];
 Show[{ListPointPlot3D[pts], Graphics3D[{Opacity[0.35], Red, Line[pts]}]}, ViewPoint -> Above]
-Out[156]=  
+ 
 (*V9*)
 \[Sigma] = 10;
 \[Rho] = 28;
@@ -125,7 +125,7 @@ f[{x_, y_, z_}] :=
   z + h*(x*y - \[Beta]*z)}
 pts = NestList[f, {1, 1, 1}, 5000];
 Show[{ListPointPlot3D[pts], Graphics3D[{Opacity[0.35], Red, Line[pts]}]}, ViewPoint -> Above]
-Out[163]=  
+ 
 (*V10*)
 \[Sigma] = 10;
 \[Rho] = 28;
@@ -137,4 +137,3 @@ f[{x_, y_, z_}] :=
   z + h*(x*y - \[Beta]*z)}
 pts = NestList[f, {1, 1, 1}, 5000];
 Show[{ListPointPlot3D[pts], Graphics3D[{Opacity[0.35], Red, Line[pts]}]}, ViewPoint -> Above]
-Out[170]=  
