@@ -1,4 +1,4 @@
-In[1]:= \[Sigma] = 10;
+\[Sigma] = 10;
 
 
 
@@ -18,7 +18,7 @@ eqpts = {x, y, z} /. eqptslns;
 
 
 
-In[82]:= (*DXYZ*)
+(*DXYZ*)
 h = 0.01;
 
 
@@ -74,7 +74,8 @@ Show[{ParametricPlot[{Cos[\[Tau]], Sin[\[Tau]]}, {\[Tau], 0, 2 \[Pi]},
 
 
 
-(*1. Adım boyutuna (step) bağlı dinamik haritanın tanımlanması*)fStep[{x_,y_,z_},step_]:={x+((1-E^(-\[Sigma]*step))/\[Sigma])*\[Sigma]*(y-x),y+(1-E^-step)/1*((x+((1-E^(-\[Sigma]*step))/\[Sigma])*\[Sigma]*(y-x)) (\[Rho]-z)-y),z+((1-E^(-\[Beta]*step)))/\[Beta]*((x+((1-E^(-\[Sigma]*step))/\[Sigma])*\[Sigma]*(y-x))*(y+(1-E^-step)/1*((x+((1-E^(-\[Sigma]*step))/\[Sigma])*\[Sigma]*(y-x)) (\[Rho]-z)-y))-\[Beta]*z)};
+(*1. Adım boyutuna (step) bağlı dinamik haritanın tanımlanması*)
+fStep[{x_,y_,z_},step_]:={x+((1-E^(-\[Sigma]*step))/\[Sigma])*\[Sigma]*(y-x),y+(1-E^-step)/1*((x+((1-E^(-\[Sigma]*step))/\[Sigma])*\[Sigma]*(y-x)) (\[Rho]-z)-y),z+((1-E^(-\[Beta]*step)))/\[Beta]*((x+((1-E^(-\[Sigma]*step))/\[Sigma])*\[Sigma]*(y-x))*(y+(1-E^-step)/1*((x+((1-E^(-\[Sigma]*step))/\[Sigma])*\[Sigma]*(y-x)) (\[Rho]-z)-y))-\[Beta]*z)};
 
 (*2. slnt yörüngesi üzerinden Richardson Ekstrapolasyonu*)
 errors=Table[Module[{pt,ptH,pt2H,gradH,grad2H,errX,errY,errZ},pt=slnt[[k]];
@@ -95,18 +96,7 @@ ListLogPlot[{xErr,yErr,zErr,totalErr},Joined->True,PlotRange->All,PlotStyle->{Bl
 
 
 
-
-Out[89]= 
-Out[91]= {0.996659 +0.101342 I,0.996659 -0.101342 I,0.869133 +0. I,0.996659 +0.101342 I,0.996659 -0.101342 I,0.869133 +0. I,1.12535,0.973686,0.796048}
-Out[92]= {1.0018,1.0018,0.869133,1.0018,1.0018,0.869133,1.12535,0.973686,0.796048}
-Out[93]= 
-Out[100]= 	x-error
-	y-error
-	z-error
-	Total error
-
-
-In[143]:= ClearAll["Global`*"];
+ClearAll["Global`*"];
 
 (*Parametreler*)
 \[Sigma]=10;\[Rho]=28;\[Beta]=8/3;
@@ -145,15 +135,6 @@ Column[{plotError,plot3D}]
 
 (*Çıktıları Göster*)
 Column[{plotError,plot3D}]
-Out[155]= 
-
-
-
-Out[156]= 
-
-
-
-Out[157]= 
 
 
 
@@ -213,10 +194,6 @@ Show[{ParametricPlot[{Cos[\[Tau]], Sin[\[Tau]]}, {\[Tau], 0, 2 \[Pi]},
 
 
 
-Out[147]=  
-Out[149]=  {0.905931 +0.403499 I,0.905931 -0.403499 I,0.588574 +0. I,0.905931 +0.403499 I,0.905931 -0.403499 I,0.588574 +0. I,1.58733,0.898825,0.405736}
-Out[150]=  {0.991727,0.991727,0.588574,0.991727,0.991727,0.588574,1.58733,0.898825,0.405736}
-Out[151]=  
 (*DYXZ*)
 h = 0.04;
 
@@ -272,10 +249,6 @@ Show[{ParametricPlot[{Cos[\[Tau]], Sin[\[Tau]]}, {\[Tau], 0, 2 \[Pi]},
 
 
 
-Out[159]=  
-Out[161]=  {0.938604 +0.395076 I,0.938604 -0.395076 I,0.558188 +0. I,0.938604 +0.395076 I,0.938604 -0.395076 I,0.558188 +0. I,1.58733,0.898825,0.405736}
-Out[162]=  {1.01836,1.01836,0.558188,1.01836,1.01836,0.558188,1.58733,0.898825,0.405736}
-Out[163]=  
 (*DYZX*)
 h = 0.04;
 
@@ -331,10 +304,6 @@ Show[{ParametricPlot[{Cos[\[Tau]], Sin[\[Tau]]}, {\[Tau], 0, 2 \[Pi]},
 
 
 
-Out[87]=  
-Out[89]=  {0.938925 +0.394993 I,0.938925 -0.394993 I,0.557899 +0. I,0.938925 +0.394993 I,0.938925 -0.394993 I,0.557899 +0. I,1.58733,0.898825,0.405736}
-Out[90]=  {1.01863,1.01863,0.557899,1.01863,1.01863,0.557899,1.58733,0.898825,0.405736}
-Out[91]=  
 (*DZXY*)
 h = 0.04;
 
@@ -390,10 +359,6 @@ Show[{ParametricPlot[{Cos[\[Tau]], Sin[\[Tau]]}, {\[Tau], 0, 2 \[Pi]},
 
 
 
-Out[99]=  
-Out[101]=  {0.938925 +0.394993 I,0.938925 -0.394993 I,0.557899 +0. I,0.938925 +0.394993 I,0.938925 -0.394993 I,0.557899 +0. I,1.58733,0.898825,0.405736}
-Out[102]=  {1.01863,1.01863,0.557899,1.01863,1.01863,0.557899,1.58733,0.898825,0.405736}
-Out[103]=  
 (*DZYX*)
 h = 0.04;
 
@@ -446,10 +411,3 @@ Show[{ParametricPlot[{Cos[\[Tau]], Sin[\[Tau]]}, {\[Tau], 0, 2 \[Pi]},
   ListPlot[
   Table[ Tooltip[{Re[evals[[i]]], Im[evals[[i]]]}, {Re[evals[[i]]], Im[evals[[i]]]}], {i, 1, Length[evals]} ], 
    PlotStyle -> {Red}]}, ImageSize -> 400]
-
-
-
-Out[171]=  
-Out[173]=  {0.905931 +0.403499 I,0.905931 -0.403499 I,0.588574 +0. I,0.905931 +0.403499 I,0.905931 -0.403499 I,0.588574 +0. I,1.58733,0.898825,0.405736}
-Out[174]=  {0.991727,0.991727,0.588574,0.991727,0.991727,0.588574,1.58733,0.898825,0.405736}
-Out[175]=  
